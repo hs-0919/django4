@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>page1</title>
+<script type="text/javascript">
+window.onload = function(){
+	document.querySelector("#btnOk").onclick =function(){
+		frm.submit();
+	}
+}
+</script>
+</head>
+<body>
+<table>
+	<tr>
+		<td>
+			<img src="/static/images/images1.png" style="width: 90%">	
+		</td>
+		<td>
+		<pre>
+		가방 판다 2,000,000원
+		혜택 없음
+		현금만 받음
+		</pre>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<form action="cart" name="frm" method="post">{% csrf_token %}
+			<input type="hidden" name="name" value="명품백"/>
+			<input type="hidden" name="price" value="2000000"/>
+			<input type="button" id="btnOk" value="장바구니로" />
+			<input type="button" value="홈으로" onclick="history.back()">
+			</form>
+		</td>
+	</tr>
+</table>
+</body>
+</html>

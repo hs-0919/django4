@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>장바구니</title>
+</head>
+<body>
+<h2>장바구니</h2>
+* 장바구니 목록 *<p/>
+<table border="1">
+	<tr><th>상품명</th><th>가격</th></tr>
+	{% if 'products'%}
+	{% for p in products %}
+	<tr>
+		<td>{{p.name}}</td>
+		<td>{{p.price}}</td>
+	</tr>
+	{% endfor %}
+	{%else %}
+	<tr>
+		<td colspan="2">자료 없음</td>
+	</tr>
+	{% endif %}
+</table>
+
+<br />
+<a href="buy">결제하기</a>
+<a href="/">메인 페이지</a>
+</body>
+</html>
